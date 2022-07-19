@@ -1,10 +1,11 @@
 import './App.scss';
 import React from 'react';
+import Main from '../Main/Main';
 
 function App() {
   return (
     <>
-      <h1 className="app">Hello world!</h1>
+      <Main />
     </>
   );
 }
