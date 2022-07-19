@@ -1,0 +1,11 @@
+$backgroundColor: #E7EBF0;
+
+.section-cards {
+  border: 1px solid red;
+  background-color: $backgroundColor;
+  display: grid;
+  grid-column-gap: 31px;
+  grid-row-gap: 26px;
+  grid-template-columns: repeat(3, minmax(min-content, 402px));
+  grid-template-rows: repeat(3, minmax(min-content, 604px));
+}
