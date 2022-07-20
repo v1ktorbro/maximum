@@ -2,7 +2,8 @@ $mainColorText: #303030;
 $greenColorForEmblemAndSymbol: #22BF86;
 $colorSubtitle: #707B8C;
 $colorItemListSubtitleColor: #ACB8BF;
-$colorBtnOptionsMore: #707B8C;
+$backgroundDisabledBtn: #E7EBF0;
+$backgroundGradientBtnSuccess: linear-gradient(90deg, rgba(17, 153, 142, 1) -30%, rgba(56, 239, 125, 1) 120%);
 
 .card {
   font-family: 'Roboto';
@@ -74,11 +75,63 @@ $colorBtnOptionsMore: #707B8C;
 
 .card__btn-options-more {
   font-size: 0.7rem;
-  color: $colorBtnOptionsMore;
+  color: $colorSubtitle;
   background-color: transparent;
   border: none;
   outline: none;
   white-space: nowrap;
   padding: 0;
   cursor: pointer;
+}
+
+.card__price-container {
+  border: 1px solid #22BF86;
+  display: grid;
+  grid-template-areas: 
+  'price-main btn'
+  'price-additional-options btn';
+}
+
+.card__price-main {
+  font-size: 1.4rem;
+  color: $greenColorForEmblemAndSymbol;
+  grid-area: price-main;
+  &::after {
+    content: '\20BD';
+    margin-left: 7px;
+    color: $mainColorText;
+  }
+}
+
+.card__price-additional-options  {
+  grid-area: price-additional-options;
+  font-size: 0.7rem;
+}
+
+.card__price-additional-options > span {
+  color: $greenColorForEmblemAndSymbol;
+  &::after {
+    content: '\20BD';
+    margin-left: 3px;
+    color: $mainColorText;
+  }
+}
+
+.card__price-container > .btn {
+  font-size: 0.5rem;
+  width: 7.25rem;
+  height: 2.4rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.card__price-container > .btn-success {
+  background: $backgroundGradientBtnSuccess;
+}
+
+.card__price-container > .btn-secondary {
+  color: $colorSubtitle;
+  background-color: $backgroundDisabledBtn;
 }
