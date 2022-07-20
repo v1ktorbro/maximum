@@ -1,11 +1,15 @@
+/* eslint-disable no-unused-vars */
 import './Card.scss';
 import React from 'react';
 import initialKiaListCars from '../../utils/initialKiaListCars';
-import defaultImage from '../../images/default_image.jpg'
+import defaultImage from '../../images/default_image_1.jpg';
+import { arrWithImages } from '../../utils/arrWithImages';
 
 export default function Card() {
   const initialCard = initialKiaListCars.list[5].feedData;
-  console.log(initialCard);
+  // console.log(initialCard);
+  const testImage = arrWithImages[0];
+  console.log(testImage.nameImage);
 
   return (
       <aside className="card" style={{maxWidth: '20.2rem'}} >
@@ -14,7 +18,7 @@ export default function Card() {
           <span className="badge badge-secondary">{initialCard.modelYear}</span>
         </h5>
         <h6 className="card-subtitle mb-3 text-muted">{initialCard.vin}</h6>
-        <img className="card-img-top" src={defaultImage} alt="Card image cap"></img>
+        <img className="card-img-top" src={require(`../../images/${testImage.nameImage}`)} alt="Card image cap"></img>
         <div className="card-body">
           <ul className='card__list-of-characteristics'>
             <li className='card__name-item-list card__name-item-list_engine'>
@@ -61,11 +65,12 @@ export default function Card() {
           </div>
 
           <div className='card__price-container'>
-            <span className='card__price-main'>{initialCard.autoPrice}</span>
-            <p className='card__price-additional-options'>
-              Доп. опции на
-              <span>{initialCard.autoPriceRrc}</span>
-            </p>
+            <div className='card__wrapper-price-container'>
+              <span className='card__price-main'>{initialCard.autoPrice}</span>
+              <p className='card__price-additional-options'>
+                Доп. опции на <span>{initialCard.autoPriceRrc}</span>
+              </p>
+            </div>  
             <button type="button" className={`btn ${!initialCard.sale ? "btn-success" :  "btn-secondary"}`}>{!initialCard.sale ? 'Купить' : 'В поставке'}</button>
           </div>
         </div>
