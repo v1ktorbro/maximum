@@ -85,17 +85,20 @@ $backgroundGradientBtnSuccess: linear-gradient(90deg, rgba(17, 153, 142, 1) -30%
 }
 
 .card__price-container {
-  border: 1px solid #22BF86;
   display: grid;
-  grid-template-areas: 
-  'price-main btn'
-  'price-additional-options btn';
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.card__wrapper-price-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .card__price-main {
   font-size: 1.4rem;
+  line-height: 1.7rem;
   color: $greenColorForEmblemAndSymbol;
-  grid-area: price-main;
   &::after {
     content: '\20BD';
     margin-left: 7px;
@@ -104,8 +107,9 @@ $backgroundGradientBtnSuccess: linear-gradient(90deg, rgba(17, 153, 142, 1) -30%
 }
 
 .card__price-additional-options  {
-  grid-area: price-additional-options;
   font-size: 0.7rem;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .card__price-additional-options > span {
@@ -125,6 +129,7 @@ $backgroundGradientBtnSuccess: linear-gradient(90deg, rgba(17, 153, 142, 1) -30%
   outline: none;
   border-radius: 8px;
   text-transform: uppercase;
+  margin-left: auto;
 }
 
 .card__price-container > .btn-success {
