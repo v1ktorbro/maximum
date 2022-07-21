@@ -1,15 +1,11 @@
-/* eslint-disable no-unused-vars */
 import './Card.scss';
 import React from 'react';
 import initialKiaListCars from '../../utils/initialKiaListCars';
-import defaultImage from '../../images/default_image_1.jpg';
 import { arrWithImages } from '../../utils/arrWithImages';
 
 export default function Card() {
   const initialCard = initialKiaListCars.list[5].feedData;
-  // console.log(initialCard);
   const testImage = arrWithImages[0];
-  console.log(testImage.nameImage);
 
   return (
       <aside className="card" style={{maxWidth: '20.2rem'}} >
